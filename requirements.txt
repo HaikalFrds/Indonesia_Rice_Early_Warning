@@ -4,3 +4,5 @@ python-dotenv==1.1.1
 pypdf==6.18.1
 cryptography==50.0.0
 fonttools==4.61.1
+matplotlib==3.10.8
+ipykernel==7.3.0
