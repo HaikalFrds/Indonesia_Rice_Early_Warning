@@ -111,7 +111,8 @@ def main():
         rows.append({
             "kode_bps": item["domain_id"],
             "kab_kota": name,
-            "jenis": "Kota" if name.startswith("Kota ") else "Kabupaten",
+            # Kode BPS: dua digit terakhir >= 71 berarti kota (nama "Kota Baru" adalah Kabupaten Kotabaru)
+            "jenis": "Kota" if int(item["domain_id"][2:]) >= 71 else "Kabupaten",
             "provinsi": moved.get(name, provinces[item["domain_id"][:2]]),
             "lat": round(lat, 4),
             "lon": round(lon, 4),
